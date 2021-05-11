@@ -17,6 +17,7 @@ namespace DIO.Series
         private string Title {get; set;}
         private string Description {get; set;}
         private int Year {get; set;}
+        private bool Excluded {get; set;}
 
         //Constructor
         public Serie(int id, Gender gender, string title, string description, int year )
@@ -26,6 +27,7 @@ namespace DIO.Series
             this.Title = title;
             this.Description = description;
             this.Year = year;
+            this.Excluded = false;
         }
 
         public override string ToString()
@@ -34,7 +36,8 @@ namespace DIO.Series
             retorno += "Gender: " + this.Gender + Environment.NewLine;
             retorno += "Title: " + this.Title + Environment.NewLine;
             retorno += "Description: " + this.Description + Environment.NewLine;
-            retorno += "Start Year: " + this.Year;
+            retorno += "Start Year: " + this.Year + Environment.NewLine;
+            retorno += "Excluded: " + this.Excluded;
             return retorno;
         }
 
@@ -46,6 +49,16 @@ namespace DIO.Series
         public int returnId()
         {
             return this.Id;
+        }
+        
+        public bool returnExcluded()
+        {
+            return this.Excluded;
+        }
+
+        public void Exclude()
+        {
+            this.Excluded = true;
         }
     }
 }

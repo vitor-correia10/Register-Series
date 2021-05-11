@@ -9,27 +9,27 @@ namespace DIO.Series
         private List<Serie> listSerie = new List<Serie>();
         public void Exclude(int id)
         {
-            throw new NotImplementedException();
+            listSerie[id].Exclude();
         }
 
         public void Insert(Serie entity)
         {
-            throw new NotImplementedException();
+            listSerie.Add(entity);
         }
 
         public List<Serie> List()
         {
-            throw new NotImplementedException();
+            return listSerie;
         }
 
         public int NextId()
         {
-            throw new NotImplementedException();
+            return listSerie.Count;
         }
 
         public Serie ReturnById(int id)
         {
-            throw new NotImplementedException();
+            return listSerie[id];
         }
 
         public void Update(int id, Serie entity)
